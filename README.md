@@ -62,23 +62,23 @@ Route 由三部分组成：
 
 - 动作：http 动作的一种，如：`GET`, `POST`, `HEAD`, `OPTIONS`, `PUT`, `DELETE`, `TRACE`, `CONNECT`, `PATCH`
 - 路径：http 请求路径，如：`/home`, `/books/:id`, `/books/:author`
-- 函数：消费http request 产生 http response，如：`() -> {}`， `request, response) -> {}`
+- 函数：消费http request 产生 http response，如：`() -> {}`, `request, response) -> {}`
 
 此外，还可以有：
 
-- 条件函数：条件函数，如：`(request) -> {}`
-- 接收类型：即 http accept type，如：`accept: text/html`
+- 条件函数：条件函数，如：`(request) -> {}`, `request -> "127.0.0.1".equals(request.ip())`
+- 接收类型：即 http accept type，如：`Accept: text/html,*/*`, `Accept: application/json`
 
 
 具体的示例：
 
 ```
 get("/books/:author", (request, response) -> {
-    return "hello sardine";
+    return "query";
 });
 
 post("/book", (request, response) -> {
-    return "ok";
+    return "created";
 });
 
 put("/books/:id", (request, response) -> {
@@ -92,6 +92,8 @@ delete("/books/:id", (request, response) -> {
 
 // TODO
 restful verb 介绍
+
+
 
 ### Parameters
 
