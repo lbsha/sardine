@@ -1,4 +1,4 @@
-#Sardine
+# Sardine
 
 > **整个项目未完成，尚处于开发中，敬请期待。。。**
 
@@ -11,13 +11,13 @@
 简介
 ---------------------------------------------------------------------------------
 
-###超轻量级的Java 微服务框架
+### 超轻量级的Java 微服务框架
 
 - Java8：函数式、Lambda表达式、Stream流式操作
 - Netty5：事件驱动、异步高性能、高可靠性
 - 极简：全部源码只有100k+，仅依赖Netty
 
-###一行代码启动一个HTTP 服务
+### 一行代码启动一个HTTP 服务
 
 ```
 public static void main(String[] args) {
@@ -27,13 +27,13 @@ public static void main(String[] args) {
 
 **搞定!** 现在，打开您的浏览器：
 
->http://localhost:9527/
+> http://localhost:9527/
 
 
-##入门
+## 入门
 ---------------------------------------------------------------------------------
 
-###依赖
+### 依赖
 
 ```
 <dependency>
@@ -43,7 +43,7 @@ public static void main(String[] args) {
 </dependency>
 ```
 
-###启动
+### 启动
 
 ```
 import static sardine.Sardine.*;
@@ -56,19 +56,21 @@ public class SardineServerTest {
 }
 ```
 
-###Route
+### Route
 
 Route 由三部分组成：
 
-- 动作：http 动作的一种（GET, POST, HEAD, OPTIONS, PUT, DELETE, TRACE, CONNECT, PATCH）
-- 路径：http 请求路径（/home, /books/:id, /books/:author）
-- 函数：消费http request，生产http response（() -> {}， (request, response) -> {}）
+- 动作：http 动作的一种，如：`GET`, `POST`, `HEAD`, `OPTIONS`, `PUT`, `DELETE`, `TRACE`, `CONNECT`, `PATCH`
+- 路径：http 请求路径，如：`/home`, `/books/:id`, `/books/:author`
+- 函数：消费http request 产生 http response，如：`() -> {}`， `request, response) -> {}`
 
 此外，还可以有：
 
-- 条件：条件函数 （(request) -> {}）
-- 类型：即 http accept type
+- 条件函数：条件函数，如：`(request) -> {}`
+- 接收类型：即 http accept type，如：`accept: text/html`
 
+
+具体的示例：
 
 ```
 get("/books/:author", (request, response) -> {
@@ -91,17 +93,17 @@ delete("/books/:id", (request, response) -> {
 // TODO
 restful verb 介绍
 
-###Parameters
+### Parameters
 
 
-###Named parameters
+### Named parameters
 
-###Wildcards parameters
+### Wildcards parameters
 
-###Query parameters
+### Query parameters
 
 
-###条件Condition
+### 条件Condition
 
 条件函数
 
@@ -113,7 +115,7 @@ get("/hello", request -> "127.0.0.1".equals(request.ip()), (request, response) -
 
 
 
-###Request
+### Request
 ```
 request.host();
 request.port();
@@ -149,7 +151,7 @@ request.bodyAsByte();
 request.bodyLength();
 ```
 
-###Response
+### Response
 ```
 response.status(404);
 response.header("foo", "bar");
@@ -163,9 +165,9 @@ response.redirect("/login");
 response.file("/hello.html");
 ```
 
-###Cookie
+### Cookie
 
-###Halt
+### Halt
 ```
 halt();
 halt(403);
@@ -173,37 +175,37 @@ halt("a u ok?");
 halt(503, "i got u!");
 ```
 
-###Filter
+### Filter
 
-###Redirect
+### Redirect
 
-###Rewrite
+### Rewrite
 
-###Exception
+### Exception
 
-###Static assets
+### Static assets
 ```
 staticFileLocation("/resources");
 
 externalStaticFileLocation("/var/www/resources");
 ```
 
-###ResponseTransformer
+### ResponseTransformer
 json
 
-###MVC
+### MVC
 
-###Gzip
+### Gzip
 
-###日志
+### 日志
 
-###监控
+### 监控
 
 
-##示例
+## 示例
 ---------------------------------------------------------------------------------
 
-###1、HelloSardine
+### 1、HelloSardine
 
 最简版：
 ```
@@ -250,9 +252,9 @@ public class HelloSardine {
 实例
 ---------------------------------------------------------------------------------
 
-###Demo工程
+### Demo工程
 
-###真实案例
+### 真实案例
 
 不蒜子：<http://busuanzi.ibruce.info>
 
