@@ -1,8 +1,12 @@
-# Sardine
+Sardine
+----------------------------------------------------------------------------------
+
 
 [中文文档](README_ZH.md "中文文档")
 
 > **整个项目未完成，尚处于开发中，敬请期待。。。**
+
+Lightweight framework for creating small standalone Java EE applications in a micro service way.
 
 轻量级高性能微服务框架，本项目是 Netty5+Java8 的 [Sinatra](http://www.sinatrarb.com) 实现。
 
@@ -10,16 +14,19 @@
 
 > 沙丁鱼，世界重要海洋经济鱼类。硬骨鱼纲鲱形目鲱科，形态延长，侧扁，腹部具棱鳞。小者二寸，大者尺许，密集群息，沿岸洄游。
 
-简介
----------------------------------------------------------------------------------
 
-### 超轻量级的Java 微服务框架
+Introduction
+==================================================================================
 
-- Java8：函数式、Lambda表达式、Stream流式操作
-- Netty5：事件驱动、异步高性能、高可靠性
-- 极简：全部源码只有100k+，仅依赖Netty
+### Lightweight micro service framework with Java8
 
-### 一行代码启动一个HTTP 服务
+- Java8: functional、Lambda、Stream
+- Netty5: 事件驱动、异步高性能、高可靠性
+- Tiny: 全部源码只有100k+，仅依赖Netty
+
+### Quick Start
+
+> a line code, a http server。
 
 ```
 public static void main(String[] args) {
@@ -27,15 +34,14 @@ public static void main(String[] args) {
 }
 ```
 
-**搞定!** 现在，打开您的浏览器：
-
+**DONE!**  Now, Run and View:
 > http://localhost:9527/
 
 
-## 入门
----------------------------------------------------------------------------------
+Tutorials
+==================================================================================
 
-### 依赖
+### Dependency
 
 ```
 <dependency>
