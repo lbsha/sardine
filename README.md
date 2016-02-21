@@ -22,7 +22,7 @@ Introduction
 
 - Java8: functional、Lambda、Stream
 - Netty5: 事件驱动、异步高性能、高可靠性
-- Tiny: 全部源码只有100k+，仅依赖Netty
+- Tiny: 全部源码只有100k+，仅依赖Netty 
 
 ### Quick Start
 
