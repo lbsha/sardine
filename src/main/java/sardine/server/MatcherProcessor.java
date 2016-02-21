@@ -35,8 +35,8 @@ public class MatcherProcessor {
     static private final String HTTP_METHOD_OVERRIDE_HEADER = "X-HTTP-Method-Override";
     static private final String HTTP_METHOD_OVERRIDE_FORM = "_method";
 
-    private SimpleRouteMatcher routeMatcher;
-    private boolean hasStaticFilesHandlers;
+    private final SimpleRouteMatcher routeMatcher;
+    private final boolean hasStaticFilesHandlers;
 
     public MatcherProcessor(SimpleRouteMatcher routeMatcher, boolean hasStaticFilesHandlers) {
         this.routeMatcher = routeMatcher;

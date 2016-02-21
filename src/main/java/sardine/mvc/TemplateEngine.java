@@ -22,7 +22,7 @@ public abstract class TemplateEngine {
     /**
      * Creates a new ModelAndView object with given arguments.
      *
-     * @param model object.
+     * @param model    object.
      * @param viewName to be rendered.
      * @return object with model and view set.
      */

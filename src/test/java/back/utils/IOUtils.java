@@ -76,7 +76,7 @@ public final class IOUtils {
      * @param input the <code>InputStream</code> to read from
      * @return the requestPart String
      * @throws NullPointerException if the input is null
-     * @throws java.io.IOException if an I/O error occurs
+     * @throws java.io.IOException  if an I/O error occurs
      */
     public static String toString(InputStream input) throws IOException {
         StringWriter sw = new StringWriter();
@@ -93,7 +93,7 @@ public final class IOUtils {
      * @param input the <code>InputStream</code> to read from
      * @return the byte array
      * @throws NullPointerException if the input is null
-     * @throws java.io.IOException if an I/O error occurs
+     * @throws java.io.IOException  if an I/O error occurs
      */
     public static byte[] toByteArray(InputStream input) throws IOException {
         ByteArrayOutputStream os = new ByteArrayOutputStream();
@@ -113,10 +113,10 @@ public final class IOUtils {
      * <p/>
      * This method uses {@link java.io.InputStreamReader}.
      *
-     * @param input the <code>InputStream</code> to read from
+     * @param input  the <code>InputStream</code> to read from
      * @param output the <code>Writer</code> to write to
      * @throws NullPointerException if the input or output is null
-     * @throws java.io.IOException if an I/O error occurs
+     * @throws java.io.IOException  if an I/O error occurs
      * @since Commons IO 1.1
      */
     public static void copy(InputStream input, Writer output)
@@ -139,12 +139,12 @@ public final class IOUtils {
      * number of chars cannot be returned as an int. For large streams
      * use the <code>copyLarge(Reader, Writer)</code> method.
      *
-     * @param input the <code>Reader</code> to read from
+     * @param input  the <code>Reader</code> to read from
      * @param output the <code>Writer</code> to write to
      * @return the number of characters copied
      * @throws NullPointerException if the input or output is null
-     * @throws java.io.IOException if an I/O error occurs
-     * @throws ArithmeticException if the character count is too large
+     * @throws java.io.IOException  if an I/O error occurs
+     * @throws ArithmeticException  if the character count is too large
      * @since Commons IO 1.1
      */
     public static int copy(Reader input, Writer output) throws IOException {
@@ -161,11 +161,11 @@ public final class IOUtils {
      * This method buffers the input internally, so there is no need to use a
      * <code>BufferedReader</code>.
      *
-     * @param input the <code>Reader</code> to read from
+     * @param input  the <code>Reader</code> to read from
      * @param output the <code>Writer</code> to write to
      * @return the number of characters copied
      * @throws NullPointerException if the input or output is null
-     * @throws java.io.IOException if an I/O error occurs
+     * @throws java.io.IOException  if an I/O error occurs
      * @since Commons IO 1.3
      */
     public static long copyLarge(Reader input, Writer output) throws IOException {

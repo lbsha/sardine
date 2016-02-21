@@ -18,14 +18,14 @@ public interface Route<T> {
      * 无参路由
      */
     @FunctionalInterface
-    public static interface VRoute<T> {
+    /*public static */ interface VRoute<T> {
         T apply() throws Exception;
     }
 
     /**
      * 简单路由
      */
-    public abstract class SardineRoute<T> implements Route<T> {
+    /*public*/ abstract class SardineRoute<T> implements Route<T> {
 
         final private String path;
         final private String accept;

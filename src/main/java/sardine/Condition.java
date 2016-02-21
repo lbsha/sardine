@@ -15,7 +15,7 @@ public interface Condition {
      * 空参 条件
      */
     @FunctionalInterface
-    public static interface VCondition {
+    /*public static*/ interface VCondition {
         boolean apply() throws Exception;
     }
 }

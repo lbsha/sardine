@@ -37,7 +37,7 @@ public class Session {
      * Returns the object bound with the specified name in this session, or null if no object is bound under the name.
      *
      * @param name a string specifying the name of the object
-     * @param <T> The type parameter
+     * @param <T>  The type parameter
      * @return the object with the specified name
      */
     @SuppressWarnings("unchecked")
@@ -48,7 +48,7 @@ public class Session {
     /**
      * Binds an object to this session, using the name specified.
      *
-     * @param name the name to which the object is bound; cannot be null
+     * @param name  the name to which the object is bound; cannot be null
      * @param value the object to be bound
      */
     public void attribute(String name, Object value) {

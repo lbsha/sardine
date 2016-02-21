@@ -27,7 +27,7 @@ class SimpleLRUCache<K, V> extends LinkedHashMap<K, V> {
      * </p>
      *
      * @param eldest the <code>Entry</code> in question; this implementation doesn't care what it is, since the
-     * implementation is only dependent on the size of the cache
+     *               implementation is only dependent on the size of the cache
      * @return <tt>true</tt> if the oldest
      * @see java.util.LinkedHashMap#removeEldestEntry(Map.Entry)
      */

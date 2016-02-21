@@ -11,22 +11,23 @@ import sardine.Response;
 class ResponseWrapper implements Response {
 
 
-    public static ResponseWrapper create(Response response) {
+    public static ResponseWrapper create(final Response response) {
         return new ResponseWrapper(response);
     }
 
-    private ResponseWrapper(Response response) {
-        this.delegate = response;
-    }
 
     private volatile boolean redirected = false;
     private volatile boolean consumed = false;
 
     private final Response delegate;
 
-    Response delegate() {
-        return delegate;
+    private ResponseWrapper(final Response response) {
+        this.delegate = response;
     }
+
+//    Response delegate() {
+//        return delegate;
+//    }
 
 //    public void delegate(Response delegate) {
 //        this.delegate = delegate;

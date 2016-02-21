@@ -17,7 +17,7 @@ public interface ExceptionHandler {
     /**
      *
      */
-    public static abstract class SardineExceptionHandler implements ExceptionHandler {
+    /*public static*/ abstract class SardineExceptionHandler implements ExceptionHandler {
 
         final protected Class<? extends Exception> exceptionClass;
 

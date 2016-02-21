@@ -35,13 +35,13 @@ public class SardineServer {
      * Ignites the sardine server, listening on the specified port, running SSL secured with the specified keystore
      * and truststore.  If truststore is null, keystore is reused.
      *
-     * @param host The address to listen on
-     * @param port - the port
-     * @param keyStoreFile - The keystore file location as string
-     * @param keyStorePassword - the password for the keystore
-     * @param trustStoreFile - the truststore file location as string, leave null to reuse keystore
-     * @param trustStorePassword - the trust store password
-     * @param staticFilesFolder - the route to static files in classPath
+     * @param host                The address to listen on
+     * @param port                - the port
+     * @param keyStoreFile        - The keystore file location as string
+     * @param keyStorePassword    - the password for the keystore
+     * @param trustStoreFile      - the truststore file location as string, leave null to reuse keystore
+     * @param trustStorePassword  - the trust store password
+     * @param staticFilesFolder   - the route to static files in classPath
      * @param externalFilesFolder - the route to static files external to classPath.
      */
     public void fire(final String host,

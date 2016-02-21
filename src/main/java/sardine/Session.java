@@ -6,5 +6,6 @@ package sardine;
  */
 public class Session {
 
+    //TODO 预留接口
 
 }

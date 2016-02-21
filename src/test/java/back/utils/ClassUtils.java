@@ -125,12 +125,12 @@ public abstract class ClassUtils {
      * Furthermore, it is also capable of resolving inner class names in Java source
      * style (e.g. "java.lang.Thread.State" instead of "java.lang.Thread$State").
      *
-     * @param name the name of the Class
+     * @param name        the name of the Class
      * @param classLoader the class loader to use
-     * (may be {@code null}, which indicates the default class loader)
+     *                    (may be {@code null}, which indicates the default class loader)
      * @return Class instance for the supplied name
      * @throws ClassNotFoundException if the class was not found
-     * @throws LinkageError if the class file could not be loaded
+     * @throws LinkageError           if the class file could not be loaded
      * @see Class#forName(String, boolean, ClassLoader)
      */
     public static Class<?> forName(String name, ClassLoader classLoader) throws ClassNotFoundException, LinkageError {
@@ -217,7 +217,7 @@ public abstract class ClassUtils {
      * to be prepended to the returned value.
      *
      * @param clazz the input class. A {@code null} value or the default
-     * (empty) package will result in an empty string ("") being returned.
+     *              (empty) package will result in an empty string ("") being returned.
      * @return a path which represents the package name
      * @see ClassLoader#getResource
      * @see Class#getResource

@@ -30,8 +30,8 @@ public class SimpleRouteMatcher {
      * finds target for a requestPart route
      *
      * @param httpMethod the http method
-     * @param path the path
-     * @param accept the accept type
+     * @param path       the path
+     * @param accept     the accept type
      * @return the target
      */
     public Optional<RouteMatched> match(HttpMethod httpMethod, String path, String accept) {
@@ -47,7 +47,7 @@ public class SimpleRouteMatcher {
      * Finds multiple targets for a requestPart route.
      *
      * @param httpMethod the http method
-     * @param path the route path
+     * @param path       the route path
      * @param acceptType the accept type
      * @return the targets
      */

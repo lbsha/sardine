@@ -162,7 +162,7 @@ public class MimeParse {
      * Finds best match
      *
      * @param supported the supported types
-     * @param header the headers
+     * @param header    the headers
      * @return the best match
      */
     public static String bestMatch(Collection<String> supported, String header) {

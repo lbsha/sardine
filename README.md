@@ -254,7 +254,7 @@ public class HelloSardine {
 
 ###真实案例
 
-不蒜子：<http://service.ibruce.info>
+不蒜子：<http://busuanzi.ibruce.info>
 
 
 压力测试

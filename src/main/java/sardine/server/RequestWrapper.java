@@ -16,20 +16,20 @@ import java.util.Set;
  */
 final class RequestWrapper implements Request {
 
-    private RequestWrapper(Request request) {
-        delegate = request;
-    }
-
-    public static RequestWrapper create(Request request) {
+    public static RequestWrapper create(final Request request) {
         return new RequestWrapper(request);
     }
 
 
     private final Request delegate;
 
-    Request delegate() {
-        return delegate;
+    private RequestWrapper(final Request request) {
+        delegate = request;
     }
+
+//    Request delegate() {
+//        return delegate;
+//    }
 
 //    public void delegate(Request delegate) {
 //        this.delegate = delegate;

@@ -42,7 +42,7 @@ public class AssetsHandler {
     private static String staticFileFolder;
     private static String externalStaticFileFolder;
 
-    final static Map<String, ByteBuf> cache = synchronizedMap(new SimpleLRUCache<String, ByteBuf>(1024));
+    private final static Map<String, ByteBuf> cache = synchronizedMap(new SimpleLRUCache<>(1024));
 
     public static void staticFileFolder(final String staticFileLocation) {
         staticFileFolder = Objects.requireNonNull(staticFileLocation);

@@ -77,7 +77,7 @@ public abstract class StringUtils {
      * Replace all occurrences of a substring within a string with
      * another string.
      *
-     * @param inString String to examine
+     * @param inString   String to examine
      * @param oldPattern String to replace
      * @param newPattern String to insert
      * @return a String with the replacements
@@ -105,9 +105,9 @@ public abstract class StringUtils {
     /**
      * Delete any character in a given String.
      *
-     * @param inString the original String
+     * @param inString      the original String
      * @param charsToDelete a set of characters to DELETE.
-     * E.g. "az\n" will DELETE 'a's, 'z's and new lines.
+     *                      E.g. "az\n" will DELETE 'a's, 'z's and new lines.
      * @return the resulting String
      */
     public static String deleteAny(String inString, String charsToDelete) {
@@ -142,9 +142,9 @@ public abstract class StringUtils {
      * Apply the given relative path to the given path,
      * assuming standard Java folder separation (i.e. "/" separators).
      *
-     * @param path the path to start from (usually a full file path)
+     * @param path         the path to start from (usually a full file path)
      * @param relativePath the relative path to apply
-     * (relative to the full file path above)
+     *                     (relative to the full file path above)
      * @return the full file path that results from applying the relative path
      */
     public static String applyRelativePath(String path, String relativePath) {
@@ -241,9 +241,9 @@ public abstract class StringUtils {
      * be considered as single delimiter string, rather than as bunch of potential
      * delimiter characters - in contrast to {@code tokenizeToStringArray}.
      *
-     * @param str the input String
+     * @param str       the input String
      * @param delimiter the delimiter between elements (this is a single delimiter,
-     * rather than a bunch individual delimiter characters)
+     *                  rather than a bunch individual delimiter characters)
      * @return an array of the tokens in the list
      */
     public static String[] delimitedListToStringArray(String str, String delimiter) {
@@ -256,11 +256,11 @@ public abstract class StringUtils {
      * be considered as single delimiter string, rather than as bunch of potential
      * delimiter characters - in contrast to {@code tokenizeToStringArray}.
      *
-     * @param str the input String
-     * @param delimiter the delimiter between elements (this is a single delimiter,
-     * rather than a bunch individual delimiter characters)
+     * @param str           the input String
+     * @param delimiter     the delimiter between elements (this is a single delimiter,
+     *                      rather than a bunch individual delimiter characters)
      * @param charsToDelete a set of characters to DELETE. Useful for deleting unwanted
-     * line breaks: e.g. "\r\n\f" will DELETE all new lines and line feeds in a String.
+     *                      line breaks: e.g. "\r\n\f" will DELETE all new lines and line feeds in a String.
      * @return an array of the tokens in the list
      */
     public static String[] delimitedListToStringArray(String str, String delimiter, String charsToDelete) {
@@ -294,8 +294,8 @@ public abstract class StringUtils {
      * Convenience method to return a Collection as a delimited (e.g. CSV)
      * String. E.g. useful for {@code toString()} implementations.
      *
-     * @param coll the Collection to display
-     * @param delim the delimiter to use (probably a ",")
+     * @param coll   the Collection to display
+     * @param delim  the delimiter to use (probably a ",")
      * @param prefix the String to start each element with
      * @param suffix the String to end each element with
      * @return the delimited String
@@ -319,7 +319,7 @@ public abstract class StringUtils {
      * Convenience method to return a Collection as a delimited (e.g. CSV)
      * String. E.g. useful for {@code toString()} implementations.
      *
-     * @param coll the Collection to display
+     * @param coll  the Collection to display
      * @param delim the delimiter to use (probably a ",")
      * @return the delimited String
      */
