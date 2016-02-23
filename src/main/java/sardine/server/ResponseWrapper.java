@@ -10,11 +10,9 @@ import sardine.Response;
  */
 class ResponseWrapper implements Response {
 
-
     public static ResponseWrapper create(final Response response) {
         return new ResponseWrapper(response);
     }
-
 
     private volatile boolean redirected = false;
     private volatile boolean consumed = false;
@@ -24,15 +22,6 @@ class ResponseWrapper implements Response {
     private ResponseWrapper(final Response response) {
         this.delegate = response;
     }
-
-//    Response delegate() {
-//        return delegate;
-//    }
-
-//    public void delegate(Response delegate) {
-//        this.delegate = delegate;
-//    }
-
 
     @Override
     public void status(HttpResponseStatus httpStatus) {

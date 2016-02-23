@@ -13,6 +13,10 @@ public interface Response {
 
     void status(int httpStatusCode);
 
+    /**
+     * TODO：不要与netty耦合
+     * @param httpStatus
+     */
     void status(HttpResponseStatus httpStatus);
 
     void contentType(String contentType);

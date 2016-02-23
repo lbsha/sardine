@@ -8,12 +8,11 @@ package sardine;
  */
 public enum HttpMethod {
 
-    GET, POST, HEAD, // http 1.0
+    GET, POST, HEAD, // HTTP 1.0
 
-    OPTIONS, PUT, DELETE, TRACE, CONNECT, // http 1.1
+    OPTIONS, PUT, DELETE, TRACE, CONNECT, // HTTP 1.1
 
-    PATCH,  // rfc...
+    PATCH,  // RFC...
 
-    BEFORE, AFTER;// sinatra
-
+    BEFORE, AFTER;// SINATRA
 }

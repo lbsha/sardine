@@ -17,14 +17,14 @@ public interface Filter {
      *
      */
     @FunctionalInterface
-    public static interface VFilter {
+    /*public static */ interface VFilter {
         void apply() throws Exception;
     }
 
     /**
      *
      */
-    public abstract class SardineFilter implements Filter {
+    /*public*/ abstract class SardineFilter implements Filter {
 
         final private String path;
         final private String accept;

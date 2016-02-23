@@ -59,7 +59,7 @@ public class SardineInboundHandler extends SimpleChannelInboundHandler<FullHttpR
                     response.headers().setInt(HttpHeaderNames.CONTENT_LENGTH, readableBytes);
                     ctx.writeAndFlush(response);
 
-//                    Metrics.responseBytesWithOutAsserts(readableBytes);
+                    // Metrics.responseBytesWithOutAsserts(readableBytes);
                 }
             } catch (Exception e) {
                 //ignore

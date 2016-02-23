@@ -88,7 +88,7 @@ public class AssetsHandler {
 
                 ChannelFuture lastContentFuture = ctx.writeAndFlush(response);
 
-//                headers.setLong(HttpHeaderNames.CONTENT_LENGTH, bytes);
+//                header.setLong(HttpHeaderNames.CONTENT_LENGTH, bytes);
 //
 //                ctx.write(response);
 //                ctx.writeAndFlush(byteBuf, ctx.newProgressivePromise());

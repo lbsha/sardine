@@ -5,4 +5,6 @@ package sardine.server;
  * @date 2015/6/11
  */
 public class NotConsumedException extends RuntimeException {
+    NotConsumedException() {
+    }
 }

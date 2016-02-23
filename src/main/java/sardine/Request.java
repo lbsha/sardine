@@ -22,19 +22,19 @@ public interface Request {
 
     Map<String, String> params();
 
-    String params(String param);
+    String param(String param);
 
-    Optional<String> paramsOptional(String param);
+    Optional<String> paramOptional(String param);
 
-    String paramsOrElse(String param, String defaultValue);
+    String paramOrElse(String param, String defaultValue);
 
     String[] splats();
 
     List<String> splatsAsList();
 
-    String splatsFirst();
+    String firstSplat();
 
-    String splatsLast();
+    String lastSplat();
 
     String method();
 
@@ -52,7 +52,7 @@ public interface Request {
 
     Set<String> headers();
 
-    String headers(CharSequence header);
+    String header(CharSequence header);
 
     String userAgent();
 
@@ -73,9 +73,9 @@ public interface Request {
 
     Set<String> queryParams();
 
-    String queryParams(String queryParam);
+    String queryParam(String queryParam);
 
-    List<String> multiQueryParams(String queryParam);
+    List<String> multiQueryParam(String queryParam);
 
     Map<String, String> cookies();
 
@@ -129,10 +129,10 @@ public interface Request {
             Logs.debug(() -> "sardine parse splats: " + splats);
 
             params = Collections.unmodifiableMap(parseParams(routePathEntries));
-            Logs.debug(() -> "sardine parse params: " + params);
+            Logs.debug(() -> "sardine parse param: " + params);
 
             queryParams = Collections.unmodifiableMap(parseQueryParams());
-            Logs.debug(() -> "sardine query params: " + queryParams);
+            Logs.debug(() -> "sardine query param: " + queryParams);
         }
 
         private List<String> parseSplats(final Collection<Routes.RoutePathEntry> routePathEntries) {
@@ -192,7 +192,7 @@ public interface Request {
         }
 
         @Override
-        public String params(final String param) {
+        public String param(final String param) {
             if (param == null) return null;
             if (param.startsWith(":"))
                 return params.get(param);
@@ -201,13 +201,13 @@ public interface Request {
         }
 
         @Override
-        public Optional<String> paramsOptional(final String param) {
-            return Optional.ofNullable(params(param));
+        public Optional<String> paramOptional(final String param) {
+            return Optional.ofNullable(param(param));
         }
 
         @Override
-        public String paramsOrElse(final String param, final String defaultValue) {
-            return Optional.ofNullable(params(param)).orElse(defaultValue);
+        public String paramOrElse(final String param, final String defaultValue) {
+            return Optional.ofNullable(param(param)).orElse(defaultValue);
         }
 
         @Override
@@ -226,13 +226,13 @@ public interface Request {
         }
 
         @Override
-        public String splatsFirst() {
+        public String firstSplat() {
             if (splats.isEmpty()) return null;
             return splats.stream().findFirst().get();
         }
 
         @Override
-        public String splatsLast() {
+        public String lastSplat() {
             if (splats.isEmpty()) return null;
             return splats.stream().reduce((previous, current) -> current).get();
         }
@@ -244,7 +244,7 @@ public interface Request {
 
         @Override
         public boolean ajax() {
-            return headers("X-Requested-With") != null;
+            return header("X-Requested-With") != null;
         }
 
         @Override
@@ -283,7 +283,7 @@ public interface Request {
         }
 
         @Override
-        public String headers(final CharSequence header) {
+        public String header(final CharSequence header) {
             return request.headers().getAndConvert(header);
         }
 
@@ -336,12 +336,12 @@ public interface Request {
         }
 
         @Override
-        public String queryParams(final String queryParam) {
-            return multiQueryParams(queryParam).stream().findFirst().orElse(null);
+        public String queryParam(final String queryParam) {
+            return multiQueryParam(queryParam).stream().findFirst().orElse(null);
         }
 
         @Override
-        public List<String> multiQueryParams(final String queryParam) {
+        public List<String> multiQueryParam(final String queryParam) {
             return queryParams.getOrDefault(queryParam, Collections.emptyList());
         }
 
@@ -389,7 +389,7 @@ public interface Request {
          * no current session and <code>create</code> is true, returns  a new session.
          *
          * @param create <code>true</code> to create a new session for this request if necessary;
-         *               <code>false</code> to return null if there's no current session
+         * <code>false</code> to return null if there's no current session
          * @return the session associated with this request or <code>null</code> if
          * <code>create</code> is <code>false</code> and the request has no valid session
          */

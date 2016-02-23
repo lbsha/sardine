@@ -9,7 +9,7 @@ package sardine;
 @FunctionalInterface
 public interface Condition {
 
-    boolean apply(Request request) throws Exception;
+    boolean apply(final Request request) throws Exception;
 
     /**
      * 空参 条件

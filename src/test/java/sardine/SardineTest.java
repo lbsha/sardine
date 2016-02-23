@@ -68,7 +68,7 @@ public class SardineTest {
             return "hello sardine.";
         });
 
-        get("/ip", (request) -> request.headers("ok") != null, (request, response) -> {
+        get("/ip", (request) -> request.header("ok") != null, (request, response) -> {
 
             return request.ip();
         });
@@ -112,7 +112,7 @@ public class SardineTest {
             response.contentType("buru");
             response.contentType("application/json");
 //            request.uri();
-//            request.headers();
+//            request.header();
 //            request.queryString();
 
             return "buru";
@@ -122,7 +122,7 @@ public class SardineTest {
 //        get("/", new SardineTest()::hello2);
 
 //
-//        get("/hello/:name", (request, response) -> "/hello/:name " + request.params("name"));
+//        get("/hello/:name", (request, response) -> "/hello/:name " + request.param("name"));
 //        get("/hello/*", (request, response) -> "/hello/* " + request.splats());
 //
 //        singleton("/tryHello", request -> request.host().contains("localhost"), (request, response) -> {

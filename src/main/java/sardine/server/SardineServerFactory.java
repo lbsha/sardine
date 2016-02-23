@@ -13,8 +13,8 @@ public final class SardineServerFactory {
 
     public static SardineServer create(boolean hasStaticHandler) {
         MatcherProcessor matcherProcessor = new MatcherProcessor(SimpleRouteMatcher.singleton(), hasStaticHandler);
-//        matcherFilter.init(null);
-//        JettyHandler handler = new JettyHandler(matcherFilter);
+        // matcherFilter.init(null);
+        // JettyHandler handler = new JettyHandler(matcherFilter);
         SardineInboundHandler handler = new SardineInboundHandler(matcherProcessor);
         return new SardineServer(handler);
     }

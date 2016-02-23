@@ -42,11 +42,11 @@ public abstract class SardineBase {
     static protected SardineServer server;
     static protected SimpleRouteMatcher router;
 
-    // TODO: https暂时不支持
-    static protected Optional<String> keyStoreFile = Optional.empty();
-    static protected Optional<String> keyStorePassword = Optional.empty();
-    static protected Optional<String> trustStoreFile = Optional.empty();
-    static protected Optional<String> trustStorePassword = Optional.empty();
+//    // TODO: https暂时不支持
+//    static protected Optional<String> keyStoreFile = Optional.empty();
+//    static protected Optional<String> keyStorePassword = Optional.empty();
+//    static protected Optional<String> trustStoreFile = Optional.empty();
+//    static protected Optional<String> trustStorePassword = Optional.empty();
 
     public static void application(final String applicationName) {
         assertBeforeServerStarted();
@@ -82,10 +82,10 @@ public abstract class SardineBase {
                                            final String trustStoreFile, final String trustStorePassword) {
         assertBeforeServerStarted();
         if (keyStoreFile == null) throw new IllegalArgumentException("keyStore file can't be null.");
-        SardineBase.keyStoreFile = Optional.of(keyStoreFile);
-        SardineBase.keyStorePassword = Optional.ofNullable(keyStorePassword);
-        SardineBase.trustStoreFile = Optional.ofNullable(trustStoreFile);
-        SardineBase.trustStorePassword = Optional.ofNullable(trustStorePassword);
+//        SardineBase.keyStoreFile = Optional.of(keyStoreFile);
+//        SardineBase.keyStorePassword = Optional.ofNullable(keyStorePassword);
+//        SardineBase.trustStoreFile = Optional.ofNullable(trustStoreFile);
+//        SardineBase.trustStorePassword = Optional.ofNullable(trustStorePassword);
     }
 
     public static synchronized void staticFileLocation(final String folder) {
@@ -172,11 +172,11 @@ public abstract class SardineBase {
                     host,
                     port,
                     staticFileFolder,
-                    externalStaticFileFolder,
+                    externalStaticFileFolder/*,
                     keyStoreFile,
                     keyStorePassword,
                     trustStoreFile,
-                    trustStorePassword);
+                    trustStorePassword*/);
         }).start();
 
         started = true;

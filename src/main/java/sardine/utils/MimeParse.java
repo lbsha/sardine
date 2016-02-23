@@ -53,7 +53,7 @@ public class MimeParse {
         }
         String fullType = parts[0].trim();
 
-        // Java URLConnection class sends an Accept headers that includes a
+        // Java URLConnection class sends an Accept header that includes a
         // single "*" - Turn it into a legal wildcard.
         if (fullType.equals("*")) {
             fullType = "*/*";
@@ -77,7 +77,7 @@ public class MimeParse {
      * For example, the media range 'application/*;q=0.5' would singleton parsed into:
      * ('application', '*', {'q', '0.5'})
      * In addition this function also guarantees that there is a value for 'q'
-     * in the params dictionary, filling it in with a proper default if
+     * in the param dictionary, filling it in with a proper default if
      * necessary.
      *
      * @param range
@@ -162,7 +162,7 @@ public class MimeParse {
      * Finds best match
      *
      * @param supported the supported types
-     * @param header    the headers
+     * @param header    the header
      * @return the best match
      */
     public static String bestMatch(Collection<String> supported, String header) {

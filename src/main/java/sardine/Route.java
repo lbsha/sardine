@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
- * 路由器
+ * 路由
  *
  * @auth bruce-sha
  * @date 2015/5/21
@@ -12,6 +12,12 @@ import java.util.Optional;
 @FunctionalInterface
 public interface Route<T> {
 
+    /**
+     * @param request
+     * @param response
+     * @return
+     * @throws Exception
+     */
     T apply(Request request, Response response) throws Exception;
 
     /**

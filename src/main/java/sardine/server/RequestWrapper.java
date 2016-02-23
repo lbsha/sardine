@@ -40,13 +40,13 @@ final class RequestWrapper implements Request {
     }
 
     @Override
-    public Optional<String> paramsOptional(String param) {
-        return delegate.paramsOptional(param);
+    public Optional<String> paramOptional(String param) {
+        return delegate.paramOptional(param);
     }
 
     @Override
-    public String paramsOrElse(String param, String defaultValue) {
-        return delegate.paramsOrElse(param, defaultValue);
+    public String paramOrElse(String param, String defaultValue) {
+        return delegate.paramOrElse(param, defaultValue);
     }
 
     @Override
@@ -70,8 +70,8 @@ final class RequestWrapper implements Request {
     }
 
     @Override
-    public List<String> multiQueryParams(String queryParam) {
-        return delegate.multiQueryParams(queryParam);
+    public List<String> multiQueryParam(String queryParam) {
+        return delegate.multiQueryParam(queryParam);
     }
 
     @Override
@@ -132,8 +132,8 @@ final class RequestWrapper implements Request {
         return delegate.params();
     }
 
-    public String params(String param) {
-        return delegate.params(param);
+    public String param(String param) {
+        return delegate.param(param);
     }
 
     public String[] splats() {
@@ -145,13 +145,13 @@ final class RequestWrapper implements Request {
     }
 
     @Override
-    public String splatsFirst() {
-        return delegate.splatsFirst();
+    public String firstSplat() {
+        return delegate.firstSplat();
     }
 
     @Override
-    public String splatsLast() {
-        return delegate.splatsLast();
+    public String lastSplat() {
+        return delegate.lastSplat();
     }
 
     public String host() {
@@ -162,12 +162,12 @@ final class RequestWrapper implements Request {
         return delegate.ip();
     }
 
-    public String queryParams(String queryParam) {
-        return delegate.queryParams(queryParam);
+    public String queryParam(String queryParam) {
+        return delegate.queryParam(queryParam);
     }
 
-    public String headers(CharSequence header) {
-        return delegate.headers(header);
+    public String header(CharSequence header) {
+        return delegate.header(header);
     }
 
     public Set<String> queryParams() {

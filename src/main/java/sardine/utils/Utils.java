@@ -14,5 +14,4 @@ public class Utils {
         return new QueryStringDecoder(uri).path();
     }
 
-
 }
