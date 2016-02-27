@@ -15,6 +15,7 @@ import static sardine.SardineBase.staticFileLocation;
 public class SardineTest {
 
     public static class Person {
+        
         String name;
         int age;
 
