@@ -7,6 +7,15 @@
     <version>0.4</version>
     <!--<packaging>jar</packaging>-->
 
+    <!--
+    branches    tags
+    1.0         sardine-1.0.0
+    1.0         sardine-1.0.1
+
+    2.0         sardine-2.0.0
+
+    -->
+
     <name>sardine</name>
     <url>http://sardine.ibruce.info</url>
 

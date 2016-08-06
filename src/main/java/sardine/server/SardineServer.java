@@ -18,6 +18,8 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
+ * sardine服务：与netty耦合的集中处
+ *
  * @auth bruce-sha
  * @date 2015/5/21
  */
@@ -32,6 +34,8 @@ public class SardineServer {
     }
 
     /**
+     * 点火：启动 server
+     *
      * @param host
      * @param port
      * @param staticFilesFolder
