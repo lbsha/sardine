@@ -3,11 +3,9 @@ Sardine
 
 [中文文档](README_ZH.md "中文文档")
 
-> **整个项目未完成，尚处于开发中，敬请期待。。。**
+Lightweight framework for creating small standalone Java applications in a micro service way.
 
-Lightweight framework for creating small standalone Java EE applications in a micro service way.
-
-轻量级高性能微服务框架，本项目是 Netty5+Java8 的 [Sinatra](http://www.sinatrarb.com) 实现。
+轻量级高性能Java微型服务框架，本项目是 Netty+Java8 的 [Sinatra](http://www.sinatrarb.com) 实现。
 
 ![Sardine](http://dn-lbstatics.qbox.me/sardine/logo.jpg)
 
@@ -19,22 +17,23 @@ Introduction
 
 ### Lightweight micro service framework with Java8
 
-- Java8: functional、Lambda、Stream
-- Netty5: 事件驱动、异步高性能、高可靠性
+- Java8: functional, Lambda, Stream
+- Netty: 事件驱动, 异步高性能, 高可靠性
 - Tiny: 全部源码只有100k+，仅依赖Netty 
 
 ### Quick Start
 
-> a line code, a http server。
+> one line code, one http server。
 
-```
+```java
 public static void main(String[] args) {
-    get("/", () -> "hello sardine.");
+    get("/", () -> "hello sardine");
 }
 ```
 
 **DONE!**  Now, Run and View:
-> http://localhost:9527/
+
+<http://localhost:9527>
 
 
 Tutorials
@@ -42,15 +41,29 @@ Tutorials
 
 ### Dependency
  
-```
+maven
+
+```xml
 <dependency>
-    <groupId>sardine</groupId>
-    <artifactId>sardine-all</artifactId>
-    <version>${sardine-version}</version>
+  <groupId>info.ibruce</groupId>
+  <artifactId>sardine</artifactId>
+  <version>1.0.0</version>
 </dependency>
 ```
 
-### 启动
+gradle
+
+```
+
+```
+
+**versions**
+
+- sardine-1.0.0：Java8 + Netty5（已发版）
+- sardine-2.0.0：Java8 + Netty4（开发中）
+
+
+### Start
 
 ```
 import static sardine.Sardine.*;
@@ -71,15 +84,18 @@ Route 由三部分组成：
 - 路径：http 请求路径，如：`/home`, `/books/:id`, `/books/:author`
 - 函数：消费http request 产生 http response，如：`() -> {}`, `request, response) -> {}`
 
-此外，还可以有：
+> 根据restful规范，建议开发者将`GET`, `PUT`, `DELETE`, `HEAD` 设计为幂等接口。
+
+
+此外，还可以使用：
 
 - 条件函数：条件函数，如：`(request) -> {}`, `request -> "127.0.0.1".equals(request.ip())`
-- 接收类型：即 http accept type，如：`Accept: text/html,*/*`, `Accept: application/json`
+- 接收类型：即http 头中的 accept，如：`Accept: text/html,*/*`, `Accept: application/json`
 
 
-具体的示例：
+示例：
 
-```
+```java
 get("/books/:author", (request, response) -> {
     return "query";
 });
@@ -101,8 +117,23 @@ delete("/books/:id", (request, response) -> {
 restful verb 介绍
 
 
+#### 条件Condition
+
+条件函数
+
+```java
+get("/hello", request -> "127.0.0.1".equals(request.ip()), (request, response) -> {
+    return "hello sardine.";
+});
+```
 
 ### Parameters
+
+参数分为三种类型：
+
+- Named parameters：
+- Wildcards parameters：
+- Query parameters：
 
 
 ### Named parameters
@@ -110,17 +141,6 @@ restful verb 介绍
 ### Wildcards parameters
 
 ### Query parameters
-
-
-### 条件Condition
-
-条件函数
-
-```
-get("/hello", request -> "127.0.0.1".equals(request.ip()), (request, response) -> {
-    return "hello sardine.";
-});
-```
 
 
 
@@ -174,6 +194,7 @@ response.redirect("/login");
 response.file("/hello.html");
 ```
 
+
 ### Cookie
 
 ### Halt
@@ -214,7 +235,7 @@ json
 ## 示例
 ---------------------------------------------------------------------------------
 
-### 1、HelloSardine
+### 1, HelloSardine
 
 最简版：
 ```
@@ -273,5 +294,15 @@ public class HelloSardine {
 
 ab
 
+
 参考资料
 ---------------------------------------------------------------------------------
+
+发版资料
+---------------------------------------------------------------------------------
+
+- <https://issues.sonatype.org/browse/OSSRH-23697>
+- <https://oss.sonatype.org>
+- <http://blog.csdn.net/ssrc0604hx/article/details/51513414>
+- <http://www.cnblogs.com/gaoxing/p/4359795.html>
+- <http://my.oschina.net/looly/blog/270767>
