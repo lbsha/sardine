@@ -53,8 +53,8 @@ maven
 
 gradle
 
-```
-
+```groovy
+compile group: 'info.ibruce', name: 'sardine', version: '1.0.0'
 ```
 
 **versions**
@@ -65,7 +65,7 @@ gradle
 
 ### Start
 
-```
+```java
 import static sardine.Sardine.*;
 
 public class SardineServerTest {
@@ -145,7 +145,7 @@ get("/hello", request -> "127.0.0.1".equals(request.ip()), (request, response) -
 
 
 ### Request
-```
+```java
 request.host();
 request.port();
 request.method();
@@ -181,7 +181,7 @@ request.bodyLength();
 ```
 
 ### Response
-```
+```java
 response.status(404);
 response.header("foo", "bar");
 response.cookie("foo", "bar");
@@ -198,7 +198,10 @@ response.file("/hello.html");
 ### Cookie
 
 ### Halt
-```
+
+中断
+
+```java
 halt();
 halt(403);
 halt("a u ok?");
@@ -214,7 +217,8 @@ halt(503, "i got u!");
 ### Exception
 
 ### Static assets
-```
+
+```java
 staticFileLocation("/resources");
 
 externalStaticFileLocation("/var/www/resources");
@@ -238,7 +242,7 @@ json
 ### 1, HelloSardine
 
 最简版：
-```
+```java
 import static sardine.Sardine.*;
 
 public class HelloSardine {
@@ -251,7 +255,8 @@ public class HelloSardine {
 > Run：http://localhost:9527/
 
 Java8 语法糖版：
-```
+
+```java
 import static sardine.Sardine.*;
 
 public class HelloSardine {
@@ -264,7 +269,7 @@ public class HelloSardine {
 
 > Run：http://localhost:9527/
 
-```
+```java
 import static sardine.Sardine.*;
 
 public class HelloSardine {
