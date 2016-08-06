@@ -1,8 +1,8 @@
 package java8;
 
 /**
- * @auth bruce-sha
- * @date 2015/8/12
+ * @author bruce-sha
+ *   2015/8/12
  */
 public class EqualsTest {
 

@@ -6,8 +6,8 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
+ *   2015/5/21
  */
 public final class Routes {
 

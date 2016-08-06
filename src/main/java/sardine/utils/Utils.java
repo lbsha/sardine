@@ -4,8 +4,8 @@ import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.QueryStringDecoder;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/18
+ * @author bruce-sha
+ *   2015/6/18
  */
 public class Utils {
 

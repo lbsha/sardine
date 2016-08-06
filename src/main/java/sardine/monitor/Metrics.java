@@ -12,8 +12,8 @@ import static java.util.concurrent.TimeUnit.*;
 /**
  * 监控是微服务必不可少的特性
  *
- * @auth bruce-sha
- * @date 2015/5/22
+ * @author bruce-sha
+ *   2015/5/22
  */
 public class Metrics {
 

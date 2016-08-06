@@ -6,15 +6,15 @@ import java.util.Optional;
 /**
  * 路由
  *
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
+ *   2015/5/21
  */
 @FunctionalInterface
 public interface Route<T> {
 
     /**
-     * @param request
-     * @param response
+     *   request
+     *   response
      * @return
      * @throws Exception
      */

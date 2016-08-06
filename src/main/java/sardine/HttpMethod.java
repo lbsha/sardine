@@ -3,8 +3,8 @@ package sardine;
 /**
  * http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
  *
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
+ *   2015/5/21
  */
 public enum HttpMethod {
 

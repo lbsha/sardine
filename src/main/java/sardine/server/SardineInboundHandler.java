@@ -15,8 +15,8 @@ import java.nio.charset.StandardCharsets;
 import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 
 /**
- * @auth bruce_sha
- * @date 2015/6/11
+ * @author bruce_sha
+ *   2015/6/11
  */
 @ChannelHandler.Sharable
 public class SardineInboundHandler extends SimpleChannelInboundHandler<FullHttpRequest> {

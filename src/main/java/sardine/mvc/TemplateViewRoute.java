@@ -5,8 +5,8 @@ import sardine.Request;
 import sardine.Response;
 
 /**
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
+ *   2015/5/21
  */
 public interface TemplateViewRoute {
 

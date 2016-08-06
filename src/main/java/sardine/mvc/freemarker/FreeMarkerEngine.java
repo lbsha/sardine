@@ -34,7 +34,7 @@ public class FreeMarkerEngine extends TemplateEngine {
     /**
      * Creates a FreeMarkerEngine with a configuration
      *
-     * @param configuration The Freemarker configuration
+     *   configuration The Freemarker configuration
      */
     public FreeMarkerEngine(Configuration configuration) {
         this.configuration = configuration;
@@ -65,7 +65,7 @@ public class FreeMarkerEngine extends TemplateEngine {
      * Note: If configuration is not set the default configuration
      * will be used.
      *
-     * @param configuration the configuration to set
+     *   configuration the configuration to set
      */
     public void setConfiguration(Configuration configuration) {
         this.configuration = configuration;

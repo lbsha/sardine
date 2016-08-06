@@ -6,8 +6,8 @@ import sardine.Response;
 /**
  * 异常憨豆
  *
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
+ *   2015/5/21
  */
 @FunctionalInterface
 public interface ExceptionHandler {

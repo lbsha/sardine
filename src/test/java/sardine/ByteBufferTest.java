@@ -4,8 +4,8 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/19
+ * @author bruce-sha
+ *   2015/6/19
  */
 public class ByteBufferTest {
     public static void main(String[] args) {

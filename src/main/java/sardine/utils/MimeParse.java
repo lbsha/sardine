@@ -80,7 +80,7 @@ public class MimeParse {
      * in the param dictionary, filling it in with a proper default if
      * necessary.
      *
-     * @param range
+     *   range
      */
     private static ParseResults parseMediaRange(String range) {
         ParseResults results = parseMimeType(range);
@@ -127,8 +127,8 @@ public class MimeParse {
      * the best match, or (-1, 0) if no match was found. Just as for
      * quality_parsed(), 'parsed_ranges' must be a list of parsed media ranges.
      *
-     * @param mimeType
-     * @param parsedRanges
+     *   mimeType
+     *   parsedRanges
      */
     private static FitnessAndQuality fitnessAndQualityParsed(String mimeType, Collection<ParseResults> parsedRanges) {
         int bestFitness = -1;
@@ -161,8 +161,8 @@ public class MimeParse {
     /**
      * Finds best match
      *
-     * @param supported the supported types
-     * @param header    the header
+     *   supported the supported types
+     *   header    the header
      * @return the best match
      */
     public static String bestMatch(Collection<String> supported, String header) {

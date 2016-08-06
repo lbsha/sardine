@@ -4,8 +4,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/19
+ * @author bruce-sha
+ *   2015/6/19
  */
 class SimpleLRUCache<K, V> extends LinkedHashMap<K, V> {
 
@@ -26,7 +26,7 @@ class SimpleLRUCache<K, V> extends LinkedHashMap<K, V> {
      * <code>LinkedHashMap</code>.
      * </p>
      *
-     * @param eldest the <code>Entry</code> in question; this implementation doesn't care what it is, since the
+     *   eldest the <code>Entry</code> in question; this implementation doesn't care what it is, since the
      *               implementation is only dependent on the size of the cache
      * @return <tt>true</tt> if the oldest
      * @see java.util.LinkedHashMap#removeEldestEntry(Map.Entry)

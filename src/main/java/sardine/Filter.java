@@ -3,10 +3,9 @@ package sardine;
 import java.util.Objects;
 
 /**
- * before & after filter
+ * before / after filter
  *
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
  */
 @FunctionalInterface
 public interface Filter {

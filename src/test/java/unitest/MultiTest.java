@@ -5,8 +5,8 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/18
+ * @author bruce-sha
+ *   2015/6/18
  */
 public class MultiTest {
 

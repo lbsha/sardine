@@ -34,8 +34,8 @@ import static java.util.Collections.synchronizedMap;
 /**
  * 静态文件处理器
  *
- * @auth bruce-sha
- * @date 2015/5/24
+ * @author bruce-sha
+ *   2015/5/24
  */
 public class AssetsHandler {
 

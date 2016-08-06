@@ -3,8 +3,8 @@ package microserver;
 //import com.aol.micro.server.MicroserverApp;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/18
+ * @author bruce-sha
+ *   2015/6/18
  */
 public class AppRunnerTest {
 

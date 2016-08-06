@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/15
+ * @author bruce-sha
+ *   2015/6/15
  */
 public class ModelAndView {
 
@@ -21,8 +21,8 @@ public class ModelAndView {
     /**
      * Constructs an instance with the provided model and view name
      *
-     * @param model    the model
-     * @param viewName the view name
+     *   model    the model
+     *   viewName the view name
      */
     public ModelAndView(Map<String, Object> model, String viewName) {
         this.model = model;

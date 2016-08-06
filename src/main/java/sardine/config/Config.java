@@ -3,8 +3,8 @@ package sardine.config;
 import sardine.Sardine;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/29
+ * @author bruce-sha
+ *   2015/6/29
  */
 public class Config {
 

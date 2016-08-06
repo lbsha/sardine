@@ -4,8 +4,8 @@ import static sardine.Sardine.get;
 import static sardine.Sardine.port;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/17
+ * @author bruce-sha
+ *   2015/6/17
  */
 public class SardineServerTest {
 

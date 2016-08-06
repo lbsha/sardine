@@ -4,8 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/15
+ * @author bruce-sha
+ *   2015/6/15
  */
 public class MapRemoveKeyTest {
     public static void main(String[] args) {

@@ -9,8 +9,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
 /**
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
+ *   2015/5/21
  */
 public class SimpleRouteMatcher {
 
@@ -29,9 +29,9 @@ public class SimpleRouteMatcher {
     /**
      * finds target for a requestPart route
      *
-     * @param httpMethod the http method
-     * @param path       the path
-     * @param accept     the accept type
+     *   httpMethod the http method
+     *   path       the path
+     *   accept     the accept type
      * @return the target
      */
     public Optional<RouteMatched> match(HttpMethod httpMethod, String path, String accept) {
@@ -46,9 +46,9 @@ public class SimpleRouteMatcher {
     /**
      * Finds multiple targets for a requestPart route.
      *
-     * @param httpMethod the http method
-     * @param path       the route path
-     * @param acceptType the accept type
+     *   httpMethod the http method
+     *   path       the route path
+     *   acceptType the accept type
      * @return the targets
      */
     public List<RouteMatched> matches(HttpMethod httpMethod, String path, String acceptType) {

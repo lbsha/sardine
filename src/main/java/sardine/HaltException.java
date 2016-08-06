@@ -5,8 +5,8 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 /**
  * 沙丁中断异常
  *
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
+ *   2015/5/21
  */
 public class HaltException extends RuntimeException {
 

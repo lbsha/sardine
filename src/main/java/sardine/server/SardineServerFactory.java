@@ -3,8 +3,8 @@ package sardine.server;
 import sardine.route.SimpleRouteMatcher;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/11
+ * @author bruce-sha
+ *   2015/6/11
  */
 public final class SardineServerFactory {
 

@@ -6,8 +6,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * @auth bruce_sha
- * @date 2015/6/15
+ * @author bruce_sha
+ *   2015/6/15
  */
 public class Session {
 
@@ -16,7 +16,7 @@ public class Session {
     /**
      * Creates a session with the <code>HttpSession</code>.
      *
-     * @param session
+     *   session
      * @throws IllegalArgumentException If the session is null.
      */
     Session(HttpSession session) {
@@ -36,8 +36,8 @@ public class Session {
     /**
      * Returns the object bound with the specified name in this session, or null if no object is bound under the name.
      *
-     * @param name a string specifying the name of the object
-     * @param <T>  The type parameter
+     *   name a string specifying the name of the object
+     *   <T>  The type parameter
      * @return the object with the specified name
      */
     @SuppressWarnings("unchecked")
@@ -48,8 +48,8 @@ public class Session {
     /**
      * Binds an object to this session, using the name specified.
      *
-     * @param name  the name to which the object is bound; cannot be null
-     * @param value the object to be bound
+     *   name  the name to which the object is bound; cannot be null
+     *   value the object to be bound
      */
     public void attribute(String name, Object value) {
         session.setAttribute(name, value);
@@ -102,7 +102,7 @@ public class Session {
     /**
      * Specifies the time, in seconds, between client requests the web container will invalidate this session.
      *
-     * @param interval the interval
+     *   interval the interval
      */
     public void maxInactiveInterval(int interval) {
         session.setMaxInactiveInterval(interval);
@@ -125,7 +125,7 @@ public class Session {
     /**
      * Removes the object bound with the specified name from this session.
      *
-     * @param name the name of the object to remove from this session
+     *   name the name of the object to remove from this session
      */
     public void removeAttribute(String name) {
         session.removeAttribute(name);

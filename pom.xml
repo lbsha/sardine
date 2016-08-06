@@ -4,7 +4,7 @@
 
     <groupId>info.ibruce</groupId>
     <artifactId>sardine</artifactId>
-    <version>0.4</version>
+    <version>1.0.0</version>
     <!--<packaging>jar</packaging>-->
 
     <!--
@@ -13,11 +13,43 @@
     1.0         sardine-1.0.1
 
     2.0         sardine-2.0.0
-
     -->
 
     <name>sardine</name>
     <url>http://sardine.ibruce.info</url>
+    <description>
+        lightweight framework for creating small standalone java applications in a micro service way.
+    </description>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>bruce-sha</name>
+            <email>bu.ru@qq.com</email>
+            <url>http://ibruce.info</url>
+        </developer>
+    </developers>
+    <scm>
+        <url>https://github.com/bruce-sha/sardine</url>
+        <connection>scm:git:https://github.com/bruce-sha/sardine.git</connection>
+        <developerConnection>scm:git:https://github.com/bruce-sha/sardine.git</developerConnection>
+        <tag>sardine-${project.version}</tag>
+    </scm>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,6 +70,7 @@
             <artifactId>freemarker</artifactId>
             <version>${freemarker-version}</version>
         </dependency>
+
         <!--<dependency>-->
         <!--<groupId>org.yaml</groupId>-->
         <!--<artifactId>snakeyaml</artifactId>-->
@@ -51,9 +84,17 @@
         <!--<artifactId>guava</artifactId>-->
         <!--<version>18.0</version>-->
         <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.21</version>
+        </dependency>
+
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
+            <scope>test</scope>
             <version>1.1.2</version>
         </dependency>
 
@@ -135,6 +176,55 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <!--<plugin>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-source-plugin</artifactId>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<id>attach-sources</id>-->
+            <!--<goals>-->
+            <!--<goal>jar-no-fork</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.3</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
             </plugin>
 
         </plugins>

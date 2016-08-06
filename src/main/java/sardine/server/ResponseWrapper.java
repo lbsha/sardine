@@ -5,8 +5,8 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 import sardine.Response;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/17
+ * @author bruce-sha
+ *   2015/6/17
  */
 class ResponseWrapper implements Response {
 

@@ -26,8 +26,8 @@ import java.util.Optional;
 import static io.netty.handler.codec.http.HttpHeaderUtil.isKeepAlive;
 
 /**
- * @auth bruce_sha
- * @date 2015/5/31
+ * @author bruce_sha
+ *   2015/5/31
  */
 public class MatcherProcessor {
 

@@ -3,8 +3,8 @@ package java8;
 import java.util.stream.IntStream;
 
 /**
- * @auth bruce-sha
- * @date 2015/5/22
+ * @author bruce-sha
+ *   2015/5/22
  */
 public class StreamTest {
 

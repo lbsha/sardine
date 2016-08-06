@@ -73,7 +73,7 @@ public final class IOUtils {
      * This method buffers the input internally, so there is no need to use a
      * <code>BufferedInputStream</code>.
      *
-     * @param input the <code>InputStream</code> to read from
+     *   input the <code>InputStream</code> to read from
      * @return the requestPart String
      * @throws NullPointerException if the input is null
      * @throws java.io.IOException  if an I/O error occurs
@@ -90,7 +90,7 @@ public final class IOUtils {
      * This method buffers the input internally, so there is no need to use a
      * <code>BufferedInputStream</code>.
      *
-     * @param input the <code>InputStream</code> to read from
+     *   input the <code>InputStream</code> to read from
      * @return the byte array
      * @throws NullPointerException if the input is null
      * @throws java.io.IOException  if an I/O error occurs
@@ -113,8 +113,8 @@ public final class IOUtils {
      * <p/>
      * This method uses {@link java.io.InputStreamReader}.
      *
-     * @param input  the <code>InputStream</code> to read from
-     * @param output the <code>Writer</code> to write to
+     *   input  the <code>InputStream</code> to read from
+     *   output the <code>Writer</code> to write to
      * @throws NullPointerException if the input or output is null
      * @throws java.io.IOException  if an I/O error occurs
      * @since Commons IO 1.1
@@ -139,8 +139,8 @@ public final class IOUtils {
      * number of chars cannot be returned as an int. For large streams
      * use the <code>copyLarge(Reader, Writer)</code> method.
      *
-     * @param input  the <code>Reader</code> to read from
-     * @param output the <code>Writer</code> to write to
+     *   input  the <code>Reader</code> to read from
+     *   output the <code>Writer</code> to write to
      * @return the number of characters copied
      * @throws NullPointerException if the input or output is null
      * @throws java.io.IOException  if an I/O error occurs
@@ -161,8 +161,8 @@ public final class IOUtils {
      * This method buffers the input internally, so there is no need to use a
      * <code>BufferedReader</code>.
      *
-     * @param input  the <code>Reader</code> to read from
-     * @param output the <code>Writer</code> to write to
+     *   input  the <code>Reader</code> to read from
+     *   output the <code>Writer</code> to write to
      * @return the number of characters copied
      * @throws NullPointerException if the input or output is null
      * @throws java.io.IOException  if an I/O error occurs

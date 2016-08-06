@@ -9,8 +9,8 @@ import sardine.SardineBase;
 import java.util.Map;
 
 /**
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
+ *   2015/5/21
  */
 public abstract class SardineTemplateViewRoute extends SardineRoute {
 

@@ -125,8 +125,8 @@ public abstract class ClassUtils {
      * Furthermore, it is also capable of resolving inner class names in Java source
      * style (e.g. "java.lang.Thread.State" instead of "java.lang.Thread$State").
      *
-     * @param name        the name of the Class
-     * @param classLoader the class loader to use
+     *   name        the name of the Class
+     *   classLoader the class loader to use
      *                    (may be {@code null}, which indicates the default class loader)
      * @return Class instance for the supplied name
      * @throws ClassNotFoundException if the class was not found
@@ -192,7 +192,7 @@ public abstract class ClassUtils {
      * Does <i>not</i> support the "[]" suffix notation for primitive arrays;
      * this is only supported by {@link #forName(String, ClassLoader)}.
      *
-     * @param name the name of the potentially primitive class
+     *   name the name of the potentially primitive class
      * @return the primitive class, or {@code null} if the name does not denote
      * a primitive class or primitive array class
      */
@@ -216,7 +216,7 @@ public abstract class ClassUtils {
      * {@code Class.getResource} instead, a leading slash would also have
      * to be prepended to the returned value.
      *
-     * @param clazz the input class. A {@code null} value or the default
+     *   clazz the input class. A {@code null} value or the default
      *              (empty) package will result in an empty string ("") being returned.
      * @return a path which represents the package name
      * @see ClassLoader#getResource

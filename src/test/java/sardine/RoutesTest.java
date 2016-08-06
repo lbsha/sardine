@@ -5,8 +5,8 @@ import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/17
+ * @author bruce-sha
+ *   2015/6/17
  */
 public class RoutesTest {
     public static void main(String[] args) {

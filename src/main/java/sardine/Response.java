@@ -6,8 +6,8 @@ import sardine.log.Logs;
 import java.util.Objects;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/17
+ * @author bruce-sha
+ *   2015/6/17
  */
 public interface Response {
 
@@ -15,14 +15,14 @@ public interface Response {
 
     /**
      * TODO：不要与netty耦合
-     * @param httpStatus
+     *   httpStatus
      */
     void status(HttpResponseStatus httpStatus);
 
     void contentType(String contentType);
 
     /**
-     * @param location
+     *   location
      * @return 返回空只是为方便调用，没什么具体意义
      */
     String redirect(String location);

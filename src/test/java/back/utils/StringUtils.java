@@ -33,7 +33,7 @@ public abstract class StringUtils {
      * that commonly deals with Strings but generally has to iterate over
      * Objects since attributes may e.g. be primitive value objects as well.
      *
-     * @param str the candidate String
+     *   str the candidate String
      * @return if the String is empty
      * @since 3.2.1
      */
@@ -44,7 +44,7 @@ public abstract class StringUtils {
     /**
      * Checks if the given String is not empty
      *
-     * @param str the candidate String
+     *   str the candidate String
      * @return if the String is not empty
      */
     public static boolean isNotEmpty(String str) {
@@ -54,7 +54,7 @@ public abstract class StringUtils {
     /**
      * Check that the given CharSequence is neither {@code null} nor of length 0.
      *
-     * @param str the CharSequence to check (may be {@code null})
+     *   str the CharSequence to check (may be {@code null})
      * @return {@code true} if the CharSequence is not null and has length
      */
     public static boolean hasLength(CharSequence str) {
@@ -65,7 +65,7 @@ public abstract class StringUtils {
      * Check that the given String is neither {@code null} nor of length 0.
      * Note: Will return {@code true} for a String that purely consists of whitespace.
      *
-     * @param str the String to check (may be {@code null})
+     *   str the String to check (may be {@code null})
      * @return {@code true} if the String is not null and has length
      * @see #hasLength(CharSequence)
      */
@@ -77,9 +77,9 @@ public abstract class StringUtils {
      * Replace all occurrences of a substring within a string with
      * another string.
      *
-     * @param inString   String to examine
-     * @param oldPattern String to replace
-     * @param newPattern String to insert
+     *   inString   String to examine
+     *   oldPattern String to replace
+     *   newPattern String to insert
      * @return a String with the replacements
      */
     public static String replace(String inString, String oldPattern, String newPattern) {
@@ -105,8 +105,8 @@ public abstract class StringUtils {
     /**
      * Delete any character in a given String.
      *
-     * @param inString      the original String
-     * @param charsToDelete a set of characters to DELETE.
+     *   inString      the original String
+     *   charsToDelete a set of characters to DELETE.
      *                      E.g. "az\n" will DELETE 'a's, 'z's and new lines.
      * @return the resulting String
      */
@@ -127,7 +127,7 @@ public abstract class StringUtils {
     /**
      * Extract the filename from the given path.
      *
-     * @param path the file path (may be {@code null})
+     *   path the file path (may be {@code null})
      * @return the extracted filename, or {@code null} if none
      */
     public static String getFilename(String path) {
@@ -142,8 +142,8 @@ public abstract class StringUtils {
      * Apply the given relative path to the given path,
      * assuming standard Java folder separation (i.e. "/" separators).
      *
-     * @param path         the path to start from (usually a full file path)
-     * @param relativePath the relative path to apply
+     *   path         the path to start from (usually a full file path)
+     *   relativePath the relative path to apply
      *                     (relative to the full file path above)
      * @return the full file path that results from applying the relative path
      */
@@ -166,7 +166,7 @@ public abstract class StringUtils {
      * <p>The result is convenient for path comparison. For other uses,
      * notice that Windows separators ("\") are replaced by simple slashes.
      *
-     * @param path the original path
+     *   path the original path
      * @return the normalized path
      */
     public static String cleanPath(String path) {
@@ -224,7 +224,7 @@ public abstract class StringUtils {
      * Copy the given Collection into a String array.
      * The Collection must contain String elements only.
      *
-     * @param collection the Collection to copy
+     *   collection the Collection to copy
      * @return the String array ({@code null} if the passed-in
      * Collection was {@code null})
      */
@@ -241,8 +241,8 @@ public abstract class StringUtils {
      * be considered as single delimiter string, rather than as bunch of potential
      * delimiter characters - in contrast to {@code tokenizeToStringArray}.
      *
-     * @param str       the input String
-     * @param delimiter the delimiter between elements (this is a single delimiter,
+     *   str       the input String
+     *   delimiter the delimiter between elements (this is a single delimiter,
      *                  rather than a bunch individual delimiter characters)
      * @return an array of the tokens in the list
      */
@@ -256,10 +256,10 @@ public abstract class StringUtils {
      * be considered as single delimiter string, rather than as bunch of potential
      * delimiter characters - in contrast to {@code tokenizeToStringArray}.
      *
-     * @param str           the input String
-     * @param delimiter     the delimiter between elements (this is a single delimiter,
+     *   str           the input String
+     *   delimiter     the delimiter between elements (this is a single delimiter,
      *                      rather than a bunch individual delimiter characters)
-     * @param charsToDelete a set of characters to DELETE. Useful for deleting unwanted
+     *   charsToDelete a set of characters to DELETE. Useful for deleting unwanted
      *                      line breaks: e.g. "\r\n\f" will DELETE all new lines and line feeds in a String.
      * @return an array of the tokens in the list
      */
@@ -294,10 +294,10 @@ public abstract class StringUtils {
      * Convenience method to return a Collection as a delimited (e.g. CSV)
      * String. E.g. useful for {@code toString()} implementations.
      *
-     * @param coll   the Collection to display
-     * @param delim  the delimiter to use (probably a ",")
-     * @param prefix the String to start each element with
-     * @param suffix the String to end each element with
+     *   coll   the Collection to display
+     *   delim  the delimiter to use (probably a ",")
+     *   prefix the String to start each element with
+     *   suffix the String to end each element with
      * @return the delimited String
      */
     public static String collectionToDelimitedString(Collection<?> coll, String delim, String prefix, String suffix) {
@@ -319,8 +319,8 @@ public abstract class StringUtils {
      * Convenience method to return a Collection as a delimited (e.g. CSV)
      * String. E.g. useful for {@code toString()} implementations.
      *
-     * @param coll  the Collection to display
-     * @param delim the delimiter to use (probably a ",")
+     *   coll  the Collection to display
+     *   delim the delimiter to use (probably a ",")
      * @return the delimited String
      */
     public static String collectionToDelimitedString(Collection<?> coll, String delim) {

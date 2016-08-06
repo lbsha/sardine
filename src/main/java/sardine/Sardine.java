@@ -15,8 +15,8 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
+ *   2015/5/21
  */
 public final class Sardine extends SardineBase {
 

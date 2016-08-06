@@ -15,8 +15,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/17
+ * @author bruce-sha
+ *   2015/6/17
  */
 public interface Request {
 
@@ -388,7 +388,7 @@ public interface Request {
          * Returns the current session associated with this request, or if there is
          * no current session and <code>create</code> is true, returns  a new session.
          *
-         * @param create <code>true</code> to create a new session for this request if necessary;
+         *   create <code>true</code> to create a new session for this request if necessary;
          * <code>false</code> to return null if there's no current session
          * @return the session associated with this request or <code>null</code> if
          * <code>create</code> is <code>false</code> and the request has no valid session

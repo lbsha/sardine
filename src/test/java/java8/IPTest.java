@@ -1,8 +1,8 @@
 package java8;
 
 /**
- * @auth bruce-sha
- * @date 2015/8/10
+ * @author bruce-sha
+ *   2015/8/10
  */
 public class IPTest {
     public static void main(String[] args) {

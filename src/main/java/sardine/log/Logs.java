@@ -10,8 +10,8 @@ import java.util.Objects;
 /**
  * log 工具
  *
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
+ *   2015/5/21
  */
 public abstract class Logs {
 

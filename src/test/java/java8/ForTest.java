@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @auth bruce-sha
- * @date 2015/8/12
+ * @author bruce-sha
+ *   2015/8/12
  */
 public class ForTest {
 

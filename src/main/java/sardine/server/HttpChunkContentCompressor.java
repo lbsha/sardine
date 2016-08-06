@@ -7,8 +7,8 @@ import io.netty.handler.codec.http.DefaultHttpContent;
 import io.netty.handler.codec.http.HttpContentCompressor;
 
 /**
- * @auth bruce-sha
- * @date 2015/6/15
+ * @author bruce-sha
+ *   2015/6/15
  */
 public final class HttpChunkContentCompressor extends HttpContentCompressor {
 

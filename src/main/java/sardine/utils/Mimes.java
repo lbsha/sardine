@@ -4,8 +4,8 @@ import javax.activation.MimetypesFileTypeMap;
 import java.io.File;
 
 /**
- * @auth bruce_sha
- * @date 2015/6/11
+ * @author bruce_sha
+ *   2015/6/11
  */
 public final class Mimes {
 

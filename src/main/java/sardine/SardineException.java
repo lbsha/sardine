@@ -3,8 +3,8 @@ package sardine;
 /**
  * 沙丁异常
  *
- * @auth bruce-sha
- * @date 2015/6/17
+ * @author bruce-sha
+ *   2015/6/17
  */
 public class SardineException extends RuntimeException {
 

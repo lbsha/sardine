@@ -3,8 +3,7 @@ package sardine;
 /**
  * 条件
  *
- * @auth bruce-sha
- * @date 2015/5/21
+ * @author bruce-sha
  */
 @FunctionalInterface
 public interface Condition {

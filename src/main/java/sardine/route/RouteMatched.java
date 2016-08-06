@@ -5,8 +5,8 @@ import sardine.HttpMethod;
 import java.util.Objects;
 
 /**
- * @auth bruce_sha
- * @date 2015/5/21
+ * @author bruce_sha
+ *   2015/5/21
  */
 public class RouteMatched {
 
