@@ -5,7 +5,7 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 import sardine.Filter.SardineFilter;
 import sardine.Route.SardineRoute;
 import sardine.log.Logs;
-import sardine.route.SimpleRouteMatcher;
+import sardine.route.RouteEntryMatcher;
 import sardine.server.SardineServer;
 import sardine.server.SardineServerFactory;
 
@@ -14,7 +14,8 @@ import java.util.Optional;
 
 /**
  * @author bruce-sha
- *   2015/5/21
+ *         2015/5/21
+ * @since 1.0.0
  */
 public abstract class SardineBase {
 
@@ -40,7 +41,7 @@ public abstract class SardineBase {
     static protected int port = DEFAULT_PORT;
 
     static protected SardineServer server;
-    static protected SimpleRouteMatcher router;
+    static protected RouteEntryMatcher router;
 
 //    // TODO: https暂时不支持
 //    static protected Optional<String> keyStoreFile = Optional.empty();
@@ -162,21 +163,13 @@ public abstract class SardineBase {
 
 //        Config.initialize();
 
-        router = SimpleRouteMatcher.singleton();
+        router = RouteEntryMatcher.singleton();
 
         // Stream.of(new Thread()).forEach(Thread::start);
 
         new Thread(() -> {
             server = SardineServerFactory.create(hasStaticFileHandlers());
-            server.fire(
-                    host,
-                    port,
-                    staticFileFolder,
-                    externalStaticFileFolder/*,
-                    keyStoreFile,
-                    keyStorePassword,
-                    trustStoreFile,
-                    trustStorePassword*/);
+            server.fire(host, port, staticFileFolder, externalStaticFileFolder);
         }).start();
 
         started = true;

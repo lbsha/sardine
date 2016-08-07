@@ -5,9 +5,9 @@ import io.netty.handler.codec.http.multipart.Attribute;
 import io.netty.handler.codec.http.multipart.HttpPostRequestDecoder;
 import io.netty.handler.codec.http.multipart.InterfaceHttpData;
 import sardine.log.Logs;
-import sardine.route.RouteMatched;
-import sardine.route.Routes;
-import sardine.route.Routes.RoutePathEntry;
+import sardine.route.RouteEntryMatched;
+import sardine.route.RouteEntries;
+import sardine.route.RoutePathEntry;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 /**
  * @author bruce-sha
- *   2015/6/17
+ *         2015/6/17
  */
 public interface Request {
 
@@ -112,18 +112,18 @@ public interface Request {
         // TODO：暂不支持
         private Session session;
 
-        SardineRequest(final FullHttpRequest request/*, final RouteMatched match*/) {
+        SardineRequest(final FullHttpRequest request/*, final RouteEntryMatched match*/) {
             this.request = request;
 //            changeMatch(match);
         }
 
-        public static Request create(/*RouteMatched match, */FullHttpRequest request) {
+        public static Request create(/*RouteEntryMatched match, */FullHttpRequest request) {
             return new SardineRequest(request/*, match*/);
         }
 
-        public void changeMatch(final RouteMatched match) {
+        public void changeMatch(final RouteEntryMatched match) {
 
-            List<RoutePathEntry> routePathEntries = Routes.routePathEntries(match.requestUri(), match.routeUri());
+            List<RoutePathEntry> routePathEntries = match.toRoutePathEntries();
 
             splats = Collections.unmodifiableList(parseSplats(routePathEntries));
             Logs.debug(() -> "sardine parse splats: " + splats);
@@ -135,25 +135,29 @@ public interface Request {
             Logs.debug(() -> "sardine query param: " + queryParams);
         }
 
-        private List<String> parseSplats(final Collection<Routes.RoutePathEntry> routePathEntries) {
+        private List<String> parseSplats(final Collection<RoutePathEntry> routePathEntries) {
             return routePathEntries
                     .stream()
-                    .parallel()
-                    .filter(e -> Routes.notNull(e.requestPart()))
-                    .filter(e -> Routes.notNull(e.routePart()))
-                    .filter(e -> Routes.isSplat(e.routePart()))
+                    .parallel()//TODO:乱序？
+//                    .filter(e -> RouteEntries.notNull(e.requestPart()))
+//                    .filter(e -> RouteEntries.notNull(e.routePart()))
+//                    .filter(e -> RouteEntries.isSplat(e.routePart()))
+                    .filter(RoutePathEntry::notNull)
+                    .filter(RoutePathEntry::isSplat)
                     .map(e -> e.requestPart())
                     .collect(Collectors.toList());
         }
 
-        private Map<String, String> parseParams(final Collection<Routes.RoutePathEntry> routePathEntries) {
+        private Map<String, String> parseParams(final Collection<RoutePathEntry> routePathEntries) {
             return routePathEntries
                     .stream()
                     .parallel()
-                    .filter(e -> Routes.notNull(e.requestPart()))
-                    .filter(e -> Routes.notNull(e.routePart()))
-                    .filter(e -> Routes.isParam(e.routePart()))
-                    .collect(Collectors.toMap(e -> e.routePart(), e -> e.requestPart()));
+//                    .filter(e -> RouteEntries.notNull(e.requestPart()))
+//                    .filter(e -> RouteEntries.notNull(e.routePart()))
+//                    .filter(e -> RouteEntries.isParam(e.routePart()))
+                    .filter(RoutePathEntry::notNull)
+                    .filter(RoutePathEntry::isParam)
+                    .collect(Collectors.toMap(RoutePathEntry::routePart, RoutePathEntry::requestPart));
         }
 
         private Map<String, List<String>> parseQueryParams() {
@@ -387,9 +391,10 @@ public interface Request {
         /**
          * Returns the current session associated with this request, or if there is
          * no current session and <code>create</code> is true, returns  a new session.
-         *
-         *   create <code>true</code> to create a new session for this request if necessary;
+         * <p>
+         * create <code>true</code> to create a new session for this request if necessary;
          * <code>false</code> to return null if there's no current session
+         *
          * @return the session associated with this request or <code>null</code> if
          * <code>create</code> is <code>false</code> and the request has no valid session
          */

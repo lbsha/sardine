@@ -6,7 +6,8 @@ import sardine.Response;
 
 /**
  * @author bruce-sha
- *   2015/6/17
+ *         2015/6/17
+ * @since 1.0.0
  */
 class ResponseWrapper implements Response {
 

@@ -8,7 +8,8 @@ import java.util.stream.IntStream;
 
 /**
  * @author bruce-sha
- *   2015/5/21
+ *         2015/5/21
+ * @since 1.0.0
  */
 class RouteEntry<T> {
 
@@ -48,7 +49,7 @@ class RouteEntry<T> {
 
     /**
      * 判断是否匹配
-     * <p/>
+     * <p>
      * 约束：两个长度必须相等，只有两个特殊情况
      * 特殊情况： /hello/* /hello/ 此时前者长1
      * 特殊情况： /hello/* /hello/bruce/sha 此时后者长n

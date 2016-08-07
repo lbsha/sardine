@@ -3,7 +3,7 @@ package sardine.server;
 import io.netty.handler.codec.http.FullHttpRequest;
 import sardine.Request;
 import sardine.Session;
-import sardine.route.RouteMatched;
+import sardine.route.RouteEntryMatched;
 
 import java.util.List;
 import java.util.Map;
@@ -12,7 +12,8 @@ import java.util.Set;
 
 /**
  * @author bruce_sha
- *   2015/5/21
+ *         2015/5/21
+ * @since 1.0.0
  */
 final class RequestWrapper implements Request {
 
@@ -35,7 +36,7 @@ final class RequestWrapper implements Request {
 //        this.delegate = delegate;
 //    }
 
-    public void changeMatch(RouteMatched match) {
+    public void changeMatch(RouteEntryMatched match) {
         ((SardineRequest) delegate).changeMatch(match);
     }
 

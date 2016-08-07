@@ -7,8 +7,11 @@ import io.netty.handler.codec.http.DefaultHttpContent;
 import io.netty.handler.codec.http.HttpContentCompressor;
 
 /**
+ * http chunk 处理器
+ *
  * @author bruce-sha
- *   2015/6/15
+ *         2015/6/15
+ * @since 1.0.0
  */
 public final class HttpChunkContentCompressor extends HttpContentCompressor {
 

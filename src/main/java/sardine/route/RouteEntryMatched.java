@@ -1,54 +1,61 @@
 package sardine.route;
 
+import sardine.HttpMethod;
+
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * @author bruce-sha
- *   2015/5/21
+ * @author bruce_sha
+ *         2015/5/21
+ * @since 1.0.0
  */
-public final class Routes {
+public class RouteEntryMatched {
 
-    private Routes() {
+    final RouteEntry matchedRoute;
+
+    final String requestUri;
+    final String accept;
+
+    RouteEntryMatched(final RouteEntry matchedRoute, final String requestUri, final String accept) {
+        this.matchedRoute = Objects.requireNonNull(matchedRoute);
+        this.requestUri = Objects.requireNonNull(requestUri);
+        this.accept = Objects.requireNonNull(accept);
     }
 
-//    //约束：两个长度必须相等，只有两个特殊情况
-//    //特殊情况： /hello/* /hello/ 此时前者长1
-//    //特殊情况： /hello/* /hello/bruce/sha 此时后者长n
-//    public static boolean isOK(final String realPath, final String routePath) {
-//
-//        // 完全相等
-//        if (routePath.equals(realPath)) return true;
-//
-//        // /结尾需要谨慎 /hello/应该匹配 /hello/*或者/hello/ 而不是/hello  但是后两者/hello/与/hello split出来是完全一样的{"","hello"}
-//        if (realPath.endsWith("/") && !((routePath.endsWith("/") || routePath.endsWith("*"))))
-//            return false;
-//
-//        final String[] routePathArray = routePath.split("/");
-//        final String[] realPathArray = realPath.split("/");
-//
-//        final int routePathLength = routePathArray.length;
-//        final int realPathLength = realPathArray.length;
-//
-//        //如果不等最后一位必须是*
-//        if (routePathLength != realPathLength) {
-//            if (!routePath.endsWith("*")) return false;
-//            if (routePathLength > realPathLength + 1) return false;
-//        }
-//
-//        return !IntStream.range(0, Math.min(routePathLength, realPathLength))
-//                .parallel()
-//                .filter(i -> !routePathArray[i].startsWith(":"))
-//                .filter(i -> !routePathArray[i].equals("*"))
-//                .anyMatch(i -> !routePathArray[i].equals(realPathArray[i]));
-//    }
+
+    public HttpMethod method() {
+        return matchedRoute.method;
+    }
+
+    public Object target() {
+        return matchedRoute.target;
+    }
+
+    public String routeUri() {
+        return matchedRoute.path;
+    }
+
+    public String requestUri() {
+        return requestUri;
+    }
+
+    public String accept() {
+        return accept;
+    }
+
 
     //约束：两个长度必须相等，只有两个特殊情况
     //特殊情况： /hello/* /hello/ 此时前者长1
     //特殊情况： /hello/* /hello/bruce/sha 此时后者长n
-    public static List<RoutePathEntry> routePathEntries(final String realPath, final String routePath) {
+    public List<RoutePathEntry> toRoutePathEntries() {
+
+        final String realPath = this.requestUri();
+        final String routePath = this.routeUri();
+
         String[] routePathArray = routePath.split("/");
         String[] realPathArray = realPath.split("/");
 
@@ -108,46 +115,5 @@ public final class Routes {
 //            re.add(new RoutePathEntry(realPathArray[i], routePathArray[i]));
 //        }
 //        return re;
-    }
-
-    public static class RoutePathEntry {
-        String requestPart;
-        String routePart;
-
-        RoutePathEntry(String requestPart, String routePart) {
-            this.requestPart = requestPart;
-            this.routePart = routePart;
-        }
-
-        public String requestPart() {
-            return requestPart;
-        }
-
-        public String routePart() {
-            return routePart;
-        }
-    }
-
-//    public static List<String> convertRouteToList(String route) {
-//        String[] pathArray = route.split("/");
-//        List<String> path = new ArrayList<>(pathArray.length);
-//        for (String p : pathArray) {
-//            if (p.length() > 0) {
-//                path.add(p);
-//            }
-//        }
-//        return path;
-//    }
-
-    public static boolean isParam(String routePart) {
-        return routePart.startsWith(":");
-    }
-
-    public static boolean notNull(String routePart) {
-        return routePart != null;
-    }
-
-    public static boolean isSplat(String routePart) {
-        return routePart.equals("*");
     }
 }

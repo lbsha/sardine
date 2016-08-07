@@ -8,10 +8,11 @@ import java.time.LocalTime;
 import java.util.Objects;
 
 /**
- * log 工具
+ * LOG 工具
  *
  * @author bruce-sha
- *   2015/5/21
+ *         2015/5/21
+ * @since 1.0.0
  */
 public abstract class Logs {
 

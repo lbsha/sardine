@@ -14,8 +14,8 @@ import sardine.exception.ExceptionHandler;
 import sardine.exception.ExceptionMapper;
 import sardine.log.Logs;
 import sardine.monitor.Metrics;
-import sardine.route.RouteMatched;
-import sardine.route.SimpleRouteMatcher;
+import sardine.route.RouteEntryMatched;
+import sardine.route.RouteEntryMatcher;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
@@ -27,7 +27,8 @@ import static io.netty.handler.codec.http.HttpHeaderUtil.isKeepAlive;
 
 /**
  * @author bruce_sha
- *   2015/5/31
+ *         2015/5/31
+ * @since 1.0.0
  */
 public class MatcherProcessor {
 
@@ -35,10 +36,10 @@ public class MatcherProcessor {
     static private final String HTTP_METHOD_OVERRIDE_HEADER = "X-HTTP-Method-Override";
     static private final String HTTP_METHOD_OVERRIDE_FORM = "_method";
 
-    private final SimpleRouteMatcher routeMatcher;
+    private final RouteEntryMatcher routeMatcher;
     private final boolean hasStaticFilesHandlers;
 
-    public MatcherProcessor(SimpleRouteMatcher routeMatcher, boolean hasStaticFilesHandlers) {
+    public MatcherProcessor(RouteEntryMatcher routeMatcher, boolean hasStaticFilesHandlers) {
         this.routeMatcher = routeMatcher;
         this.hasStaticFilesHandlers = hasStaticFilesHandlers;
     }
@@ -124,7 +125,7 @@ public class MatcherProcessor {
 
             /************************** 前置过滤器 ***************************/
 
-            final List<RouteMatched> beforeMatches = routeMatcher.matches(HttpMethod.BEFORE, path, accept);
+            final List<RouteEntryMatched> beforeMatches = routeMatcher.matches(HttpMethod.BEFORE, path, accept);
             beforeMatches.stream()
                     .filter(e -> e.target() instanceof SardineFilter)
                     .forEach(e -> {
@@ -146,11 +147,11 @@ public class MatcherProcessor {
 
             /************************** 请求响应 ***************************/
 
-            final Optional<RouteMatched> match = routeMatcher.match(method, path, accept);
+            final Optional<RouteEntryMatched> match = routeMatcher.match(method, path, accept);
 
             if (match.isPresent()) {
 
-                RouteMatched routeMatched = match.get();
+                RouteEntryMatched routeMatched = match.get();
                 Object target = routeMatched.target();
 
                 if (target instanceof SardineRoute) {
@@ -182,7 +183,7 @@ public class MatcherProcessor {
 
             /************************** 后置过滤器 ***************************/
 
-            final List<RouteMatched> afterMatches = routeMatcher.matches(HttpMethod.AFTER, path, accept);
+            final List<RouteEntryMatched> afterMatches = routeMatcher.matches(HttpMethod.AFTER, path, accept);
 
             afterMatches.stream()
                     .filter(e -> e.target() instanceof SardineFilter)

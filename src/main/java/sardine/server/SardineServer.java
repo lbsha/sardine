@@ -18,28 +18,31 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
- * sardine服务：与netty耦合的集中处
+ * sardine服务器
+ * <p>
+ * 与netty框架耦合的集中处，扩展其他服务器从这里入手
  *
  * @author bruce-sha
- *   2015/5/21
+ *         2015/5/21
+ * @since 1.0.0
  */
 public class SardineServer {
 
     final private ChannelHandler handler;
-    private EventLoopGroup workerGroup;
     private EventLoopGroup bossGroup;
+    private EventLoopGroup workerGroup;
 
-    /*public*/ SardineServer(ChannelHandler handler) {
+    SardineServer(ChannelHandler handler) {
         this.handler = Objects.requireNonNull(handler);
     }
 
     /**
      * 点火：启动 server
      *
-     *   host
-     *   port
-     *   staticFilesFolder
-     *   externalFilesFolder
+     * @param host                绑定地址
+     * @param port                绑定端口
+     * @param staticFilesFolder   内部静态资源
+     * @param externalFilesFolder 外部静态资源
      */
     public void fire(final String host,
                      final int port,
@@ -50,8 +53,8 @@ public class SardineServer {
         if (externalFilesFolder.isPresent()) AssetsHandler.externalStaticFileFolder(externalFilesFolder.get());
 
         try {
-            workerGroup = new NioEventLoopGroup();
             bossGroup = new NioEventLoopGroup();
+            workerGroup = new NioEventLoopGroup();
 
             final ServerBootstrap bootstrap = new ServerBootstrap()
                     .group(bossGroup, workerGroup)
@@ -87,7 +90,10 @@ public class SardineServer {
         }
     }
 
-    //http://netty.io/wiki/user-guide-for-5.x.html#wiki-h3-17
+    /**
+     * @see <a href="http://netty.io/wiki/user-guide-for-5.x.html#shutting-down-your-application">
+     * Netty.docs: User guide for 5.x - Shutting Down Your Application</a>
+     */
     public void stop() {
 
         bossGroup.shutdownGracefully();

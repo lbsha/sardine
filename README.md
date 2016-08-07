@@ -59,8 +59,8 @@ compile group: 'info.ibruce', name: 'sardine', version: '1.0.0'
 
 **versions**
 
-- sardine-1.0.0：Java8 + Netty5（已发版）
-- sardine-2.0.0：Java8 + Netty4（开发中）
+- sardine-1.0.0：Java8 + Netty5（已发版：2015.06）
+- sardine-2.0.0：Java8 + Netty4（开发中：2016.08）
 
 
 ### Start

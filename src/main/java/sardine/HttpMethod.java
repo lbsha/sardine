@@ -1,10 +1,10 @@
 package sardine;
 
 /**
- * http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
- *
  * @author bruce-sha
- *   2015/5/21
+ *         2015/5/21
+ * @see <a href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">Hypertext Transfer Protocol</a>
+ * @since 1.0.0
  */
 public enum HttpMethod {
 

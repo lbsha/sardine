@@ -10,16 +10,17 @@ import java.util.stream.Collectors;
 
 /**
  * @author bruce-sha
- *   2015/5/21
+ *         2015/5/21
+ * @since 1.0.0
  */
-public class SimpleRouteMatcher {
+public class RouteEntryMatcher {
 
     // 定义的顺序即是filter执行的顺序，指明order？
     final private List<RouteEntry> routerRoutes = new CopyOnWriteArrayList<>();
 //    final private List<RouteEntry<Route.SardineRoute<?>>> routerRoutes = new CopyOnWriteArrayList<>();
 //    final private List<RouteEntry<Filter.SardineFilter>> filterRoutes = new CopyOnWriteArrayList<>();
 
-    SimpleRouteMatcher() {
+    RouteEntryMatcher() {
     }
 
     public void add(final HttpMethod httpMethod, final String uri, final String acceptType, final Object target) {
@@ -28,31 +29,33 @@ public class SimpleRouteMatcher {
 
     /**
      * finds target for a requestPart route
+     * <p>
+     * httpMethod the http method
+     * path       the path
+     * accept     the accept type
      *
-     *   httpMethod the http method
-     *   path       the path
-     *   accept     the accept type
      * @return the target
      */
-    public Optional<RouteMatched> match(HttpMethod httpMethod, String path, String accept) {
+    public Optional<RouteEntryMatched> match(HttpMethod httpMethod, String path, String accept) {
         //会找出一大批，因为filter也是用这个找
         List<RouteEntry> routeEntries = this.findTargetsForRequestedRoute(httpMethod, path);
         //TODO 找出一个
         RouteEntry entry = findTargetWithGivenAcceptType(routeEntries, accept);
 
-        return entry != null ? Optional.of(new RouteMatched(entry, path, accept)) : Optional.empty();
+        return entry != null ? Optional.of(new RouteEntryMatched(entry, path, accept)) : Optional.empty();
     }
 
     /**
      * Finds multiple targets for a requestPart route.
+     * <p>
+     * httpMethod the http method
+     * path       the route path
+     * acceptType the accept type
      *
-     *   httpMethod the http method
-     *   path       the route path
-     *   acceptType the accept type
      * @return the targets
      */
-    public List<RouteMatched> matches(HttpMethod httpMethod, String path, String acceptType) {
-        List<RouteMatched> matchSet = new ArrayList<>();
+    public List<RouteEntryMatched> matches(HttpMethod httpMethod, String path, String acceptType) {
+        List<RouteEntryMatched> matchSet = new ArrayList<>();
         List<RouteEntry> routeEntries = findTargetsForRequestedRoute(httpMethod, path);
 
         for (RouteEntry routeEntry : routeEntries) {
@@ -60,10 +63,10 @@ public class SimpleRouteMatcher {
                 String bestMatch = MimeParse.bestMatch(Arrays.asList(routeEntry.accept), acceptType);
 
                 if (routeWithGivenAcceptType(bestMatch)) {
-                    matchSet.add(new RouteMatched(routeEntry, path, acceptType));
+                    matchSet.add(new RouteEntryMatched(routeEntry, path, acceptType));
                 }
             } else {
-                matchSet.add(new RouteMatched(routeEntry, path, acceptType));
+                matchSet.add(new RouteEntryMatched(routeEntry, path, acceptType));
             }
         }
 
@@ -136,11 +139,11 @@ public class SimpleRouteMatcher {
     }
 
     static private class RouteMatcherFactoryHolder {
-        static final SimpleRouteMatcher instance = new SimpleRouteMatcher();
+        static final RouteEntryMatcher single = new RouteEntryMatcher();
     }
 
-    public static synchronized SimpleRouteMatcher singleton() {
-        return RouteMatcherFactoryHolder.instance;
+    public static synchronized RouteEntryMatcher singleton() {
+        return RouteMatcherFactoryHolder.single;
     }
 
 }

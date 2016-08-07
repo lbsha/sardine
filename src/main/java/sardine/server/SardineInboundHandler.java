@@ -16,7 +16,8 @@ import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 
 /**
  * @author bruce_sha
- *   2015/6/11
+ *         2015/6/11
+ * @since 1.0.0
  */
 @ChannelHandler.Sharable
 public class SardineInboundHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
